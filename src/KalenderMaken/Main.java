@@ -41,12 +41,12 @@ public class Main {
         System.out.println("--------------------------------------------------------------------------------------------");
 
         ArrayList<Integer> Maandag = new ArrayList<>();
-        ArrayList<String> Dinsdag = new ArrayList<>();
-        ArrayList<String> Woensdag = new ArrayList<>();
-        ArrayList<String> Donderdag = new ArrayList<>();
-        ArrayList<String> Vrijdag = new ArrayList<>();
-        ArrayList<String> Zaterdag = new ArrayList<>();
-        ArrayList<String> Zondag = new ArrayList<>();
+        ArrayList<Integer> Dinsdag = new ArrayList<>();
+        ArrayList<Integer> Woensdag = new ArrayList<>();
+        ArrayList<Integer> Donderdag = new ArrayList<>();
+        ArrayList<Integer> Vrijdag = new ArrayList<>();
+        ArrayList<Integer> Zaterdag = new ArrayList<>();
+        ArrayList<Integer> Zondag = new ArrayList<>();
 
         // Als een date een bepaalde dag is, zet hem dan in het volgende array. Doet dit voor elke dag in jaar.
         for (LocalDate date = LocalDate.of(jaar, Month.JANUARY, 1); date.isBefore(LocalDate.of((jaar + 1), Month.JANUARY, 1)); date = date.plusDays(1)) {
@@ -54,25 +54,25 @@ public class Main {
             // lukt dit me ook met een switch en enum?
 
             if (date.getDayOfWeek() == DayOfWeek.MONDAY) {
-                Maandag.add(Integer.valueOf(date.getDayOfMonth()));
+                Maandag.add(date.getDayOfMonth());
             }
             if (date.getDayOfWeek() == DayOfWeek.TUESDAY) {
-                Dinsdag.add(String.valueOf(date.getDayOfMonth()));
+                Dinsdag.add(date.getDayOfMonth());
             }
             if (date.getDayOfWeek() == DayOfWeek.WEDNESDAY) {
-                Woensdag.add(String.valueOf(date.getDayOfMonth()));
+                Woensdag.add(date.getDayOfMonth());
             }
             if (date.getDayOfWeek() == DayOfWeek.THURSDAY) {
-                Donderdag.add(String.valueOf(date.getDayOfMonth()));
+                Donderdag.add(date.getDayOfMonth());
             }
             if (date.getDayOfWeek() == DayOfWeek.FRIDAY) {
-                Vrijdag.add(String.valueOf(date.getDayOfMonth()));
+                Vrijdag.add(date.getDayOfMonth());
             }
             if (date.getDayOfWeek() == DayOfWeek.SATURDAY) {
-                Zaterdag.add(String.valueOf(date.getDayOfMonth()));
+                Zaterdag.add(date.getDayOfMonth());
             }
             if (date.getDayOfWeek() == DayOfWeek.SUNDAY) {
-                Zondag.add(String.valueOf(date.getDayOfMonth()));
+                Zondag.add(date.getDayOfMonth());
             }
         }
 
@@ -91,8 +91,11 @@ public class Main {
         System.out.println(Maandag.size());
 
      for(int i = 0; i < Maandag.size() - 1 ; i++){
-         if(Maandag.get(i+1) > Maandag.get(i)){
-             System.out.println("hallo!");
+         System.out.print(Maandag.get(i));
+         if(Maandag.get(i+1) < Maandag.get(i)){
+             System.out.print(" | ");
+         } else {
+             System.out.print("  ");
          }
 
      }
@@ -112,7 +115,7 @@ public class Main {
         LocalDate eenDecember = LocalDate.of(jaar, Month.DECEMBER, 1);
 
 
-        System.out.println(eenJanuari.getDayOfWeek());
+       // System.out.println(eenJanuari.getDayOfWeek());
 
         if (yoran.getSchrikkeljaar() == true) {
             System.out.println("TRUE");
