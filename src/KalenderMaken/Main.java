@@ -50,43 +50,28 @@ public class Main {
         ArrayList<Integer> Zaterdag = new ArrayList<>();
         ArrayList<Integer> Zondag = new ArrayList<>();
 
-        // Als een date een bepaalde dag is, zet hem dan in het volgende array. Doet dit voor elke dag in jaar.
+        // Als een date een bepaalde dag is, zet hem dan in het juiste array. Doet dit voor elke dag in jaar.
+
+
         for (LocalDate date = LocalDate.of(jaar, Month.JANUARY, 1); date.isBefore(LocalDate.of((jaar + 1), Month.JANUARY, 1)); date = date.plusDays(1)) {
-
             // lukt dit me ook met een switch en enum?
-
-            if (date.getDayOfWeek() == DayOfWeek.MONDAY) {
-                Maandag.add(date.getDayOfMonth());
-            }
-            if (date.getDayOfWeek() == DayOfWeek.TUESDAY) {
-                Dinsdag.add(date.getDayOfMonth());
-            }
-            if (date.getDayOfWeek() == DayOfWeek.WEDNESDAY) {
-                Woensdag.add(date.getDayOfMonth());
-            }
-            if (date.getDayOfWeek() == DayOfWeek.THURSDAY) {
-                Donderdag.add(date.getDayOfMonth());
-            }
-            if (date.getDayOfWeek() == DayOfWeek.FRIDAY) {
-                Vrijdag.add(date.getDayOfMonth());
-            }
-            if (date.getDayOfWeek() == DayOfWeek.SATURDAY) {
-                Zaterdag.add(date.getDayOfMonth());
-            }
-            if (date.getDayOfWeek() == DayOfWeek.SUNDAY) {
-                Zondag.add(date.getDayOfMonth());
-            }
+            if (date.getDayOfWeek() == DayOfWeek.MONDAY) {Maandag.add(date.getDayOfMonth());}
+            if (date.getDayOfWeek() == DayOfWeek.TUESDAY) {Dinsdag.add(date.getDayOfMonth());}
+            if (date.getDayOfWeek() == DayOfWeek.WEDNESDAY) {Woensdag.add(date.getDayOfMonth());}
+            if (date.getDayOfWeek() == DayOfWeek.THURSDAY) {Donderdag.add(date.getDayOfMonth());}
+            if (date.getDayOfWeek() == DayOfWeek.FRIDAY) {Vrijdag.add(date.getDayOfMonth());}
+            if (date.getDayOfWeek() == DayOfWeek.SATURDAY) {Zaterdag.add(date.getDayOfMonth());}
+            if (date.getDayOfWeek() == DayOfWeek.SUNDAY) {Zondag.add(date.getDayOfMonth());}
         }
+         int count = 0;
 
         for (int i = 0; i < Maandag.size(); i++) {
-            int count = 0;
-
             if (i != (Maandag.size()) - 1) {
                 System.out.print(Maandag.get(i));
                 if (Maandag.get(i + 1) < Maandag.get(i)) {
-                    if (count == 4) {
-                        int count = 0;
+                    if ((count == 3)||(count == 7)) {
                         System.out.println();
+                        count++;
                     } else {
                         count++;
                         System.out.print("  |  ");
@@ -105,9 +90,16 @@ public class Main {
             if (i != (Dinsdag.size()) - 1) {
                 System.out.print(Dinsdag.get(i));
                 if (Dinsdag.get(i + 1) < Dinsdag.get(i)) {
-                    System.out.print("  |  ");
+                    if ((count == 3)||(count == 7)) {
+                        System.out.println();
+                        count++;
+                    } else {
+                        count++;
+                        System.out.print("  |  ");
+                    }
                 } else {
                     System.out.print("  ");
+
                 }
             }
             if (i == Dinsdag.size() - 1) {
@@ -115,76 +107,92 @@ public class Main {
                 System.out.println();
             }
         }
-        for (int i = 0; i < Woensdag.size(); i++) {
-            if (i != (Woensdag.size()) - 1) {
-                System.out.print(Woensdag.get(i));
-                if (Woensdag.get(i + 1) < Woensdag.get(i)) {
-                    System.out.print("  |  ");
+        for (int i = 0; i < Maandag.size(); i++) {
+            if (i != (Maandag.size()) - 1) {
+                System.out.print(Maandag.get(i));
+                if (Maandag.get(i + 1) < Maandag.get(i)) {
+                    if ((count == 3)||(count == 7)) {
+                        System.out.println();
+                        count++;
+                    } else {
+                        count++;
+                        System.out.print("  |  ");
+                    }
                 } else {
                     System.out.print("  ");
+
                 }
             }
-            if (i == Woensdag.size() - 1) {
-                System.out.print(Woensdag.get(i));
+            if (i == Maandag.size() - 1) {
+                System.out.print(Maandag.get(i));
                 System.out.println();
             }
         }
-        for (int i = 0; i < Donderdag.size(); i++) {
-            if (i != (Donderdag.size()) - 1) {
-                System.out.print(Donderdag.get(i));
-                if (Donderdag.get(i + 1) < Donderdag.get(i)) {
-                    System.out.print("  |  ");
+        for (int i = 0; i < Maandag.size(); i++) {
+            if (i != (Maandag.size()) - 1) {
+                System.out.print(Maandag.get(i));
+                if (Maandag.get(i + 1) < Maandag.get(i)) {
+                    if ((count == 3)||(count == 7)) {
+                        System.out.println();
+                        count++;
+                    } else {
+                        count++;
+                        System.out.print("  |  ");
+                    }
                 } else {
                     System.out.print("  ");
+
                 }
             }
-            if (i == Donderdag.size() - 1) {
-                System.out.print(Donderdag.get(i));
+            if (i == Maandag.size() - 1) {
+                System.out.print(Maandag.get(i));
                 System.out.println();
             }
         }
-        for (int i = 0; i < Vrijdag.size(); i++) {
-            if (i != (Vrijdag.size()) - 1) {
-                System.out.print(Vrijdag.get(i));
-                if (Vrijdag.get(i + 1) < Vrijdag.get(i)) {
-                    System.out.print("  |  ");
+        for (int i = 0; i < Maandag.size(); i++) {
+            if (i != (Maandag.size()) - 1) {
+                System.out.print(Maandag.get(i));
+                if (Maandag.get(i + 1) < Maandag.get(i)) {
+                    if ((count == 3)||(count == 7)) {
+                        System.out.println();
+                        count++;
+                    } else {
+                        count++;
+                        System.out.print("  |  ");
+                    }
                 } else {
                     System.out.print("  ");
+
                 }
             }
-            if (i == Vrijdag.size() - 1) {
-                System.out.print(Vrijdag.get(i));
+            if (i == Maandag.size() - 1) {
+                System.out.print(Maandag.get(i));
                 System.out.println();
             }
         }
-        for (int i = 0; i < Zaterdag.size(); i++) {
-            if (i != (Zaterdag.size()) - 1) {
-                System.out.print(Zaterdag.get(i));
-                if (Zaterdag.get(i + 1) < Zaterdag.get(i)) {
-                    System.out.print("  |  ");
+        for (int i = 0; i < Maandag.size(); i++) {
+            if (i != (Maandag.size()) - 1) {
+                System.out.print(Maandag.get(i));
+                if (Maandag.get(i + 1) < Maandag.get(i)) {
+                    if ((count == 3)||(count == 7)) {
+                        System.out.println();
+                        count++;
+                    } else {
+                        count++;
+                        System.out.print("  |  ");
+                    }
                 } else {
                     System.out.print("  ");
+
                 }
             }
-            if (i == Zaterdag.size() - 1) {
-                System.out.print(Zaterdag.get(i));
+            if (i == Maandag.size() - 1) {
+                System.out.print(Maandag.get(i));
                 System.out.println();
             }
         }
-        for (int i = 0; i < Zondag.size(); i++) {
-            if (i != (Zondag.size()) - 1) {
-                System.out.print(Zondag.get(i));
-                if (Zondag.get(i + 1) < Zondag.get(i)) {
-                    System.out.print("  |  ");
-                } else {
-                    System.out.print("  ");
-                }
-            }
-            if (i == Zondag.size() - 1) {
-                System.out.print(Zondag.get(i));
-                System.out.println();
-            }
-        }
+
+
 
         LocalDate eenJanuari = LocalDate.of(jaar, Month.JANUARY, 1);
         LocalDate eenFebruari = LocalDate.of(jaar, Month.FEBRUARY, 1);
