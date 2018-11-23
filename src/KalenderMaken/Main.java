@@ -40,7 +40,7 @@ public class Main {
         System.out.println("    Sun|                  |");
         System.out.println("--------------------------------------------------------------------------------------------");
 
-        ArrayList<String> Maandag = new ArrayList<>();
+        ArrayList<Integer> Maandag = new ArrayList<>();
         ArrayList<String> Dinsdag = new ArrayList<>();
         ArrayList<String> Woensdag = new ArrayList<>();
         ArrayList<String> Donderdag = new ArrayList<>();
@@ -48,42 +48,35 @@ public class Main {
         ArrayList<String> Zaterdag = new ArrayList<>();
         ArrayList<String> Zondag = new ArrayList<>();
 
-
-        for (LocalDate date = LocalDate.of(jaar, Month.JANUARY, 1) ; date.isBefore(LocalDate.of((jaar+1), Month.JANUARY, 1)) ; date = date.plusDays(1)) {
+        // Als een date een bepaalde dag is, zet hem dan in het volgende array. Doet dit voor elke dag in jaar.
+        for (LocalDate date = LocalDate.of(jaar, Month.JANUARY, 1); date.isBefore(LocalDate.of((jaar + 1), Month.JANUARY, 1)); date = date.plusDays(1)) {
 
             // lukt dit me ook met een switch en enum?
 
-            if(date.getDayOfWeek() == DayOfWeek.MONDAY){
-                Maandag.add(String.valueOf(date.getDayOfMonth()));
+            if (date.getDayOfWeek() == DayOfWeek.MONDAY) {
+                Maandag.add(Integer.valueOf(date.getDayOfMonth()));
             }
-            if(date.getDayOfWeek() == DayOfWeek.TUESDAY){
+            if (date.getDayOfWeek() == DayOfWeek.TUESDAY) {
                 Dinsdag.add(String.valueOf(date.getDayOfMonth()));
             }
-            if(date.getDayOfWeek() == DayOfWeek.WEDNESDAY){
+            if (date.getDayOfWeek() == DayOfWeek.WEDNESDAY) {
                 Woensdag.add(String.valueOf(date.getDayOfMonth()));
             }
-            if(date.getDayOfWeek() == DayOfWeek.THURSDAY){
+            if (date.getDayOfWeek() == DayOfWeek.THURSDAY) {
                 Donderdag.add(String.valueOf(date.getDayOfMonth()));
             }
-            if(date.getDayOfWeek() == DayOfWeek.FRIDAY){
+            if (date.getDayOfWeek() == DayOfWeek.FRIDAY) {
                 Vrijdag.add(String.valueOf(date.getDayOfMonth()));
             }
-            if(date.getDayOfWeek() == DayOfWeek.SATURDAY){
+            if (date.getDayOfWeek() == DayOfWeek.SATURDAY) {
                 Zaterdag.add(String.valueOf(date.getDayOfMonth()));
             }
-            if(date.getDayOfWeek() == DayOfWeek.SUNDAY){
+            if (date.getDayOfWeek() == DayOfWeek.SUNDAY) {
                 Zondag.add(String.valueOf(date.getDayOfMonth()));
             }
-
-
-
-
-
-
-
-
-
         }
+
+        /*
 
         System.out.println(Maandag);
         System.out.println(Dinsdag);
@@ -93,10 +86,16 @@ public class Main {
         System.out.println(Zaterdag);
         System.out.println(Zondag);
 
+        */
 
-        // Als een date een bepaalde dag is, zet hem dan in het volgende array. Doet dit voor elke dag in jaar.
+        System.out.println(Maandag.size());
 
+     for(int i = 0; i < Maandag.size() - 1 ; i++){
+         if(Maandag.get(i+1) > Maandag.get(i)){
+             System.out.println("hallo!");
+         }
 
+     }
 
 
         LocalDate eenJanuari = LocalDate.of(jaar, Month.JANUARY, 1);
@@ -111,7 +110,6 @@ public class Main {
         LocalDate eenOktober = LocalDate.of(jaar, Month.OCTOBER, 1);
         LocalDate eenNovember = LocalDate.of(jaar, Month.NOVEMBER, 1);
         LocalDate eenDecember = LocalDate.of(jaar, Month.DECEMBER, 1);
-
 
 
         System.out.println(eenJanuari.getDayOfWeek());
