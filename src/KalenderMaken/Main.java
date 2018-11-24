@@ -84,6 +84,7 @@ public class Main {
             if (i == Maandag.size() - 1) {
                 System.out.print(Maandag.get(i));
                 System.out.println();
+                count = 0;
             }
         }
         for (int i = 0; i < Dinsdag.size(); i++) {
@@ -105,12 +106,13 @@ public class Main {
             if (i == Dinsdag.size() - 1) {
                 System.out.print(Dinsdag.get(i));
                 System.out.println();
+                count = 0;
             }
         }
-        for (int i = 0; i < Maandag.size(); i++) {
-            if (i != (Maandag.size()) - 1) {
-                System.out.print(Maandag.get(i));
-                if (Maandag.get(i + 1) < Maandag.get(i)) {
+        for (int i = 0; i < Woensdag.size(); i++) {
+            if (i != (Woensdag.size()) - 1) {
+                System.out.print(Woensdag.get(i));
+                if (Woensdag.get(i + 1) < Woensdag.get(i)) {
                     if ((count == 3)||(count == 7)) {
                         System.out.println();
                         count++;
@@ -123,15 +125,16 @@ public class Main {
 
                 }
             }
-            if (i == Maandag.size() - 1) {
-                System.out.print(Maandag.get(i));
+            if (i == Woensdag.size() - 1) {
+                System.out.print(Woensdag.get(i));
                 System.out.println();
+                count = 0;
             }
         }
-        for (int i = 0; i < Maandag.size(); i++) {
-            if (i != (Maandag.size()) - 1) {
-                System.out.print(Maandag.get(i));
-                if (Maandag.get(i + 1) < Maandag.get(i)) {
+        for (int i = 0; i < Donderdag.size(); i++) {
+            if (i != (Donderdag.size()) - 1) {
+                System.out.print(Donderdag.get(i));
+                if (Donderdag.get(i + 1) < Donderdag.get(i)) {
                     if ((count == 3)||(count == 7)) {
                         System.out.println();
                         count++;
@@ -144,15 +147,16 @@ public class Main {
 
                 }
             }
-            if (i == Maandag.size() - 1) {
-                System.out.print(Maandag.get(i));
+            if (i == Donderdag.size() - 1) {
+                System.out.print(Donderdag.get(i));
                 System.out.println();
+                count = 0;
             }
         }
-        for (int i = 0; i < Maandag.size(); i++) {
-            if (i != (Maandag.size()) - 1) {
-                System.out.print(Maandag.get(i));
-                if (Maandag.get(i + 1) < Maandag.get(i)) {
+        for (int i = 0; i < Vrijdag.size(); i++) {
+            if (i != (Vrijdag.size()) - 1) {
+                System.out.print(Vrijdag.get(i));
+                if (Vrijdag.get(i + 1) < Vrijdag.get(i)) {
                     if ((count == 3)||(count == 7)) {
                         System.out.println();
                         count++;
@@ -165,15 +169,16 @@ public class Main {
 
                 }
             }
-            if (i == Maandag.size() - 1) {
-                System.out.print(Maandag.get(i));
+            if (i == Vrijdag.size() - 1) {
+                System.out.print(Vrijdag.get(i));
                 System.out.println();
+                count = 0;
             }
         }
-        for (int i = 0; i < Maandag.size(); i++) {
-            if (i != (Maandag.size()) - 1) {
-                System.out.print(Maandag.get(i));
-                if (Maandag.get(i + 1) < Maandag.get(i)) {
+        for (int i = 0; i < Zaterdag.size(); i++) {
+            if (i != (Zaterdag.size()) - 1) {
+                System.out.print(Zaterdag.get(i));
+                if (Zaterdag.get(i + 1) < Zaterdag.get(i)) {
                     if ((count == 3)||(count == 7)) {
                         System.out.println();
                         count++;
@@ -186,9 +191,32 @@ public class Main {
 
                 }
             }
-            if (i == Maandag.size() - 1) {
-                System.out.print(Maandag.get(i));
+            if (i == Zaterdag.size() - 1) {
+                System.out.print(Zaterdag.get(i));
                 System.out.println();
+                count = 0;
+            }
+        }
+        for (int i = 0; i < Zondag.size(); i++) {
+            if (i != (Zondag.size()) - 1) {
+                System.out.print(Zondag.get(i));
+                if (Zondag.get(i + 1) < Zondag.get(i)) {
+                    if ((count == 3)||(count == 7)) {
+                        System.out.println();
+                        count++;
+                    } else {
+                        count++;
+                        System.out.print("  |  ");
+                    }
+                } else {
+                    System.out.print("  ");
+
+                }
+            }
+            if (i == Zondag.size() - 1) {
+                System.out.print(Zondag.get(i));
+                System.out.println();
+                count = 0;
             }
         }
 
